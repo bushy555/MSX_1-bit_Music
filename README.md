@@ -29,21 +29,31 @@ Select .ROM file.   Will auto load, auto run and auto play.
 
 
 	output "file.rom"	; use for SJASMplus.  Remark for PASMO.
-
- 	org 	$4000
- 	defb 	"AB"
- 	defw 	start
- 	defb 	00,00,00,00,00,00
+	org 	$4000
+	defb 	"AB"
+	defw 	start
+	defb 	00,00,00,00,00,00
+	
 start:
+
+
 ..
 ..
+
 
 	ld   a,255
 	out  ($aa),a		
 	xor  a
-        out  ($aa),a
+	out  ($aa),a
+
+		
 ..
 ..
+
+
 	ds -$ & #3fff		; filler
+	
 END
+
+
 
